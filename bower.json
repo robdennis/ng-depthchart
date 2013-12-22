@@ -1,0 +1,30 @@
+{
+  "name": "ng-depthchart",
+  "version": "0.1.0",
+  "homepage": "https://github.com/robdennis/ng-depthchart",
+  "authors": [
+    "Rob Dennis <rdennis@gmail.com>"
+  ],
+  "description": "Angular JS directive for rending a \"depth chart\"-style HTML stable",
+  "main": "depthchart.js",
+  "keywords": [
+    "angular",
+    "table",
+    "depth",
+    "chart"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.6"
+  }
+}
