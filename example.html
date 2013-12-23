@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script>
+    <script src="depthchart.js"></script>
+    <script src="example.js"></script>
+</head>
+<body ng-app="example">
+    <div ng-controller="exampleCtrl">
+        <depth-chart data="basic_example"></depth-chart>
+        <depth-chart data="object_example" display-template="object_template_for_value"></depth-chart>
+        <depth-chart data="object_example" display-template="object_template_for_uppercase_label"></depth-chart>
+    </div>
+</body>
+</html>
