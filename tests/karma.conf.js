@@ -14,7 +14,8 @@ module.exports = function(config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'depthchart.js',
-            'tests/depthchartSpec.js'
+            'tests/serviceSpec.js',
+            'tests/directiveSpec.js'
         ],
 
         // list of files / patterns to exclude
