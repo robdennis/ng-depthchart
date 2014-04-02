@@ -19,7 +19,8 @@ angular.module('ng-depthchart', [])
             scope: {
                 data: '=',
                 displayTemplate: '=',
-                additionalClasses: '='
+                additionalClasses: '=',
+                templateFunction: '&'
             },
 
             link: function(scope, element) {
