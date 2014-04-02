@@ -306,12 +306,12 @@ describe('ng-depthchart', function() {
             scope.providedData = [
                 {header: 'stuff', data: ['foo']}
             ];
-            scope.function = function() {
-                return 'mocked';
+            scope.function = function(item) {
+                return 'mocked ' + item;
             };
             scope.template = '' +
                 '<div>' +
-                    '<span id="toTest">{{templateFunction()}}</span>' +
+                    '<span id="toTest">{{templateFunction({item: item})}}</span>' +
                 '</div>';
             var table = angular.element('' +
                 '<div><depth-chart data="providedData" template-function="function(item)" display-template="template"></depth-chart></div>'
@@ -319,7 +319,7 @@ describe('ng-depthchart', function() {
             );
             compile(table)(scope);
             scope.$apply();
-            expect(table.find('#toTest').text()).toBe('mocked');
+            expect(table.find('#toTest').text()).toBe('mocked foo');
         });
 
         it('can set a callback function that is used as a click handler', function() {
