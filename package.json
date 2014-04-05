@@ -5,6 +5,7 @@
         "karma": "~0.12.0",
         "jquery": "~2.1.0",
         "karma-firefox-launcher": "~0.1.0",
-        "karma-chrome-launcher": "~0.1.0"
+        "karma-chrome-launcher": "~0.1.0",
+        "karma-jasmine": "~0.1.0"
     }
 }
