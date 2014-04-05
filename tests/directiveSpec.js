@@ -294,4 +294,55 @@ describe('ng-depthchart', function() {
             ])
         })
     });
+
+    describe('template functions', function() {
+        var compile, scope;
+        beforeEach(inject(function($rootScope, $compile) {
+            scope = $rootScope;
+            compile = $compile;
+        }));
+
+        it('can set a callback function that is used to render content', function() {
+            scope.providedData = [
+                {header: 'stuff', data: ['foo']}
+            ];
+            scope.function = function(item) {
+                return 'mocked ' + item;
+            };
+            scope.template = '' +
+                '<div>' +
+                    '<span id="toTest">{{templateFunction({item: item})}}</span>' +
+                '</div>';
+            var table = angular.element('' +
+                '<div><depth-chart data="providedData" template-function="function(item)" display-template="template"></depth-chart></div>'
+
+            );
+            compile(table)(scope);
+            scope.$apply();
+            expect(table.find('#toTest').text()).toBe('mocked foo');
+        });
+
+        it('can set a callback function that is used as a click handler', function() {
+            scope.providedData = [
+                {header: 'stuff', data: ['foo']}
+            ];
+            scope.function = jasmine.createSpy('mockedClickHandler');
+            scope.template = '' +
+                '<div>' +
+                    '<span>{{item}}</span>' +
+                    '<button id="toTest" ng-click="templateFunction({test: item})">test</span>' +
+                '</div>';
+            var table = angular.element('' +
+                '<div><depth-chart data="providedData" template-function="function(test)" display-template="template"></depth-chart></div>'
+
+            );
+            compile(table)(scope);
+            scope.$apply();
+
+            expect(scope.function).not.toHaveBeenCalled();
+            table.find('#toTest').click();
+            expect(scope.function).toHaveBeenCalledWith('foo');
+        });
+
+    })
 });

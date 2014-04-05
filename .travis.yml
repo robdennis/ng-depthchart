@@ -10,5 +10,5 @@ before_script:
 script:
   - npm install -g bower
   - bower install
-  - karma start tests/karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  - node_modules/karma/bin/karma start tests/karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
 

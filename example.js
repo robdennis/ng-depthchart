@@ -35,4 +35,9 @@ exampleCtrl = function($scope) {
             {value: 4, label: "thing 4"}
         ]}
     ];
+
+    $scope.alert = function() {
+        console.log(arguments);
+    };
+    $scope.alert_object = '<div><span>{{ item.value }}</span><button ng-click="templateFunction({thing:item.value})"></div>';
 };
